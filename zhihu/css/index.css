@@ -1,0 +1,283 @@
+/*
+* @Author: Administrator
+* @Date:   2017-11-09 22:56:31
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-11-12 19:39:43
+*/
+body{
+	background-color: rgb(243, 243, 243);
+}
+.myTop{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	background-color: #fff;
+	box-shadow: 0 1px 2px #bbb;
+}
+.myTop .container{
+	display: flex;
+	height: 40px;
+	line-height: 40px;
+	padding: 5px 0;
+}
+.myTop .li1{
+	flex: 4;
+}
+.myTop .li1 .iconfont{
+	font-size: 36px;
+	font-weight: 600;
+	color: #0f88eb;
+	vertical-align: middle;
+}
+.myTop .li1 a{
+	margin: 0 5px;
+}
+.myTop .li1 nav a{
+	color: #bbb;
+}
+.myTop .li1 nav a:hover{
+	color: #000;
+}
+.myTop .li1 nav a:first-child{
+	color: #000;
+}
+.myTop .li2{
+	background-color: rgb(243, 243, 243);
+	line-height: 35px;
+	flex: 5;
+	border: 1px solid #bbb;
+	border-radius: 5px;
+	padding: 0 0 0 10px;
+}
+.myTop .hl2{
+	flex: 7;
+}
+.myTop .li2 input{
+	background-color: inherit;
+	border: none;
+	vertical-align: middle;
+	height: 80%;
+	width: 90%;
+}
+.myTop .li2 input:focus{
+	outline: none;
+}
+.myTop .li2 button{
+	background-color: inherit;
+	vertical-align: middle;
+	text-align: center;
+	border: none;
+	width: 8%;
+}
+.myTop .li2 button:focus{
+	outline: none;
+}
+.myTop .li2 button span{
+	background-color: rgb(243, 243, 243);
+	font-size: 24px;
+	color: #bbb;
+}
+.myTop .li3{
+	flex: 2;
+	overflow: hidden;
+}
+.myTop .li3 button{
+	height: 38px;
+	width: 60px;
+	text-align: center;
+	margin-left: 20px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	background-color: rgb(15, 136, 235);
+	color: #fff;
+}
+.myTop .li4{
+	flex: 6;
+}
+.myTop .li4 div{
+	float: right;
+}
+.myTop .li4 div button{
+	margin: 0 10px;
+	position: relative;
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+}
+.myTop .li4 div button:focus{
+	outline: none;
+}
+.myTop .li4 div button i{
+	display: inline-block;
+	color: #bbb;
+	font-size: 24px;
+	margin: 0 10px;
+}
+.myTop .li4 div button i:hover{
+	color: #aaa;
+}
+.myTop .li4 div button span{
+	position: absolute;
+	border: 2px solid #fff;
+	font-size: 12px;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	top: -5px;
+	right: 3px;
+	background-color: rgb(247, 86, 89);
+	color: #fff;
+	border-radius: 50%;
+}
+.myTop nav{
+	display: inline-block;
+}
+
+.myContent .container{
+	margin-top: 60px;
+	height: 100px;
+}
+.myContent .left{
+	display: inline-block;
+	width: 68%;
+	margin-right: 15px;
+}
+.myContent .left nav{
+	background-color: #fff;
+	height: 60px;
+	line-height: 60px;
+	box-shadow: 1px 1px 1px #ddd,-1px 1px 1px #ddd;
+}
+.myContent .left nav a{
+	margin: 0 15px;
+}
+.myContent .left nav a:last-child{
+	float: right;
+}
+.myContent .left>div{
+	padding: 15px;
+	margin-top: 15px;
+	background-color: #fff;
+	box-shadow: 1px 1px 1px #ddd,-1px 1px 1px #ddd;
+}
+.myContent .left>div>div{
+	margin-top: 10px;
+}
+.myContent .left>div .c-source{
+	color: #aaa;
+	margin-top: 0;
+}
+.myContent .left>div .c-author span{
+	color: #aaa;
+}
+.myContent .left>div .c-author h4{
+	display: inline-block;
+}
+.myContent .left>div .c-content a{
+	color: #175199;
+}
+.myContent .left>div .c-content a:hover{
+	color: #aaa;
+}
+.myContent .left>div .c-footer>span{
+	cursor: pointer;
+	color: #175199;
+	background-color: #ebf3cc;
+}
+.myContent .left>div .c-footer button{
+	position: relative;
+	border: none;
+	background-color: #fff;
+	color: #aaa;
+	font-size: 16px;
+	outline: none;
+}
+.myContent .left>div .c-footer button div{
+	position: absolute;
+	width: 100px;
+	height: 90px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background-color: #fff;
+	display: none;
+}
+.myContent .left>div .c-footer button:focus div{
+	display: block;
+}
+.myContent .left>div .c-footer a{
+	color: #aaa;
+	margin: 0 10px;
+}
+.myContent .left>div .c-footer>a:last-child{
+	color: #175199;
+	float: right;
+}
+.myContent .left>div .c-footer a:last-child:hover{
+	color: #aaa;
+}
+.myContent .right{
+	display: inline-block;
+	position: fixed;
+	width: 20%;	
+}
+.myContent .right .c-r-top{
+	padding: 10px;
+	background-color: #fff;
+	box-shadow: 1px 1px 1px #ddd,-1px 1px 1px #ddd;
+}
+.myContent .right .c-r-top a{
+	display: inline-block;
+	width: 32%;
+	margin: 10px 0;
+	text-align: center;
+}
+.myContent .right .c-r-top a:first-child{
+	color: orange;
+}
+.myContent .right .c-r-top a:nth-child(2){
+	color: green;
+}
+.myContent .right .c-r-top a:nth-child(3){
+	color: blue;
+}
+.myContent .right .c-r-top a:nth-child(4){
+	color: green;
+}
+.myContent .right .c-r-top a:nth-child(5){
+	color: blue;
+}
+.myContent .right .c-r-top a span:first-child{
+	font-size: 24px;
+}
+.myContent .right .c-r-center {
+	background-color: #fff;
+	box-shadow: 1px 1px 1px #ddd,-1px 1px 1px #ddd;
+	margin-top: 10px;
+}
+.myContent .right .c-r-center div{
+	padding: 10px 10px;
+}
+.myContent .right .c-r-center div:hover{
+	background-color: #ddd;
+}
+.myContent .right .c-r-center div a{
+	color: #aaa;
+}
+.myContent .right .c-r-center div a span{
+	display: inline-block;
+	margin: 0 5px;
+}
+.myContent .right .c-r-bottom{
+	margin-top: 10px;
+}
+.myContent .right .c-r-bottom div{
+	padding: 5px 0;
+	color: #aaa;
+}
+.myContent .right .c-r-bottom div a{
+	color: #aaa;
+}
+.myContent .right .c-r-bottom div a:hover{
+	color: #175199;
+}

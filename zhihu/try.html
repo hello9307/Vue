@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			height: 100px;
+			border: 1px solid #555;
+			line-height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<a href="" v-if="s" @focus="s=false">1</a>
+		<a href="" v-if="!s" @focus="s=true">2</a>
+	</div>
+
+	<script src="js/lib/vue.min.js"></script>
+	<script>
+		new Vue({
+			el:'#app',
+			data:{
+				s:true
+			}
+		})
+	</script>
+</body>
+</html>

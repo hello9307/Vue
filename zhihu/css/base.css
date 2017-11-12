@@ -1,0 +1,21 @@
+/*
+* @Author: Administrator
+* @Date:   2017-11-09 22:56:39
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-11-12 16:07:27
+*/
+button,ul,body,h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+.container{
+	width: 1000px;
+	margin: 0 auto;
+}

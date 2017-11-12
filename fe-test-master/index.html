@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>文章</title>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+
+	<body>
+		<div id="app">
+			<header>
+				<form class="search">
+					<input type="text" placeholder="前端面试题">
+					<a @click="reload" href="javascript:;"><i class="iconfont">&#xe600;</i></a>
+				</form>
+			</header>
+			<main v-for="data in title">
+				<h2 v-text="data.title"></h2>
+				<div class="label">
+					<div class="left">
+						<div class="class" v-text="data.tab"></div>
+						<div class="author" v-text="data.author.loginname">作者</div>
+					</div>
+					<div class="rigth">{{data.create_at|date}}</div>
+				</div>
+				<article>
+					<p class="ellipsis">
+						<a :href="'https://cnodejs.org/api/v1/topic/'+data.id">{{data.content|content}}</a>
+					</p>
+					<aside><img :src="data.author.avatar_url" alt="照片"></aside>
+				</article>
+			</main>
+			<div v-if="loading" class="loading">加载中...</div>
+		</div>
+		<script src="js/vue.min.js"></script>
+		<script src="js/vue-resource.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+
+</html>

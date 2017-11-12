@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div id="myApp">
+		<div class="myTop">
+			<div class="container">
+				<div class="li1">
+					<a href=""><span class="iconfont icon-zhihu"></span></a>
+					<nav>
+						<a href="">首页</a>
+						<a href="">发现</a>
+						<a href="">话题</a>
+					</nav>
+				</div>
+				<div class="li2" :class="{'hl2':myHave1}">
+					<input type="text" @focus="myHave1=true" @blur="myHave1=false" placeholder="搜索你感兴趣的内容...">
+					<button><span class="iconfont icon-dizhixuanzeqisousuo"></span></button>
+				</div>
+				<div class="li3" v-if="!myHave1">
+					<button>提问</button>
+				</div>
+				<div class="li4">
+					<div>
+						<button href=""><i class="iconfont icon-lingdang"></i><span>{{informNum}}</span></button>
+						<button href=""><i class="iconfont icon-zixun"></i><span>{{messageNum}}</span></button>
+						<button href=""><i class="iconfont icon-gou"></i></button>
+					</div>
+				</div>
+			</div>
+		</div><!--头部-->
+		<div class="myContent">
+			<div class="container">
+				<div class="left">
+					<nav>
+						<a href="">
+							<span class="iconfont icon-tiwen"></span>
+							提问
+						</a>
+						<a href="">
+							<span class="iconfont icon-wenda"></span>
+							回答
+						</a>
+						<a href="">
+							<span class="iconfont icon-icon_caidan_zhuanxiewenzhang"></span>
+							写文章
+						</a>
+						<a href="">
+							<span class="iconfont icon-iconfontpinglun3eps"></span>
+							写想法
+						</a>
+						<a href="">草稿</a>
+					</nav>
+
+					<div v-for=" item in dataList">
+						<div class="c-source">来源</div>
+						<div>
+							<h3>{{item.title}}</h3>
+						</div>
+						<div class="c-author">
+							<span>logo</span>
+							<h4>{{item.author}}</h4>
+							<span>{{item.meta}}</span>
+						</div>
+						<div class="c-content" :class="{'selected':item.myHave2}">
+							{{item.abstract | limitC(item)}}
+							<a v-if="item.myHave2" @click="changeLimit(item)">查看原文∨</a>
+						</div>
+						<div class="c-footer">
+							<!-- 将获取到的数量赋值给一个数,当数组中的数小于这个数,数组中的数等于这个数，大鱼这个数加一，等于 -->
+							<span @click="addNum">▲{{number}}</span>
+							<span @click="reduceNum">▼</span>
+							<a href="">
+								<span class="iconfont icon-xiaoxi"></span>25条评论
+							</a>
+							<a href="">
+								<span class="iconfont icon-feiji"></span>分享
+							</a>
+							<a href="">
+								<span class="iconfont icon-shoucang1"></span>收藏
+							</a>
+							<!-- 以下出现一个小问题 -->
+							<!-- myHave3等会要改 -->
+							<a href="" v-if="myHave3" @focus="myHave3=false">
+								<span class="iconfont icon-tubiaozhizuomoban">感谢</span>
+							</a>
+							<a href="" v-if="!myHave3" @focus="myHave3=true">
+								<span class="iconfont icon-tubiaozhizuomoban">取消感谢</span>
+							</a>
+							<button href="">
+								...
+								<div>
+									<p>
+										<a href="">没有帮助</a>
+									</p>
+									<p>
+										<a href="">举报</a>
+									</p>
+								</div>
+							</button>
+							<a v-if="!item.myHave2" @click="limit(item)">收起∧</a>
+						</div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="c-r-top">
+						<a href="">
+							<span class="iconfont icon-shandian"></span>
+							<br>
+							<span>live</span>
+						</a>
+						<a href="">
+							<span class="iconfont icon-benshubook119"></span>
+							<br>
+							<span>书店</span>
+						</a>
+						<a href="">
+							<span class="iconfont icon-shangrenshequ_yuanzhuo"></span>
+							<br>
+							<span>圆桌</span>
+						</a>
+						<a href="">
+							<span class="iconfont icon-bi"></span>
+							<br>
+							<span>专栏</span>
+						</a>
+						<a href="">
+							<span class="iconfont icon-fufeizixun"></span>
+							<br>
+							<span>付费咨询</span>
+						</a>
+					</div>
+					<div>
+					<div class="c-r-center">
+						<div>
+							<a href="">
+								<span class="iconfont icon-shoucang1"></span>
+								我的收藏
+							</a>
+						</div>
+						<div>
+							<a href="">
+								<span class="iconfont icon-tiwen"></span>
+								我关注的问题
+							</a>
+						</div>
+						<div>
+							<a href="">
+								<span class="iconfont icon-ren"></span>
+								我的邀请
+							</a>
+						</div>
+						<div>
+							<a href="">
+								<span class="iconfont icon-dizhi"></span>
+								社区服务中心
+							</a>
+						</div>
+						<div>
+							<a href="">
+								<span class="iconfont icon-wenda"></span>
+								版权服务中心
+							</a>
+						</div>
+						<div>
+							<a href="">
+								<span class="iconfont icon-bi"></span>
+								公共编辑动态
+							</a>
+						</div>
+					</div>
+					<div class="c-r-bottom">
+						<div>
+							<a href="">刘看山</a>·
+							<a href="">知乎指南</a>·
+							<a href="">知乎协议</a>·
+							<a href="">应用</a>·
+							<a href="">工作</a>
+						</div>
+						<div>
+							<a href="">侵权举报</a>·
+							<a href="">网上有害信息举报专区</a>
+						</div>
+						<div>
+							<a href="">违法和不良信息举报:010-82716601</a>
+						</div>
+						<div>
+							<a href="">儿童色情信息举报专区</a>
+						</div>
+						<div>
+							<a href="">联系我们 2017知乎</a>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div><!--主要内容-->
+	</div>
+
+	<script src="js/lib/vue.min.js"></script>
+	<script src="js/lib/vue-resource.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
