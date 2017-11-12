@@ -28,7 +28,7 @@ new Vue({
 	methods:{
 		refresh:function(){
 			let _this=this;
-			this.$http.get('data/test.json').then(function(res){
+			this.$http.get('zhihu/data/test.json').then(function(res){
 				_this.dataList=res.body;
 				_this.limitData();
 			})
